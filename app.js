@@ -9,7 +9,9 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.get('/', (req, res) => {
+  res.send('Task management server is live');
+});
 app.use('/api/users', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
