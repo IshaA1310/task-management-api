@@ -1,13 +1,16 @@
-Task Management API – Node.js + Express + MongoDB
+Task Management API – Node.js, Express, MongoDB
 
-A backend application that allows users to register, login, and manage their tasks with authentication, filtering, sorting, and pagination.
-This project is deployed live on cloud and uses environment variables for secure configuration.
+A backend application that allows users to register, login, and manage their tasks.
+Includes authentication, filtering, sorting, and pagination.
+This API is deployed on Render with environment-based configuration.
 
 Live API URL
-https://your-render-app-url.onrender.com
+
+https://task-management-api-5cr8.onrender.com
 
 GitHub Repository
-https://github.com/your-username/your-repo-name
+
+https://github.com/IshaA1310/task-management-api
 
 Features
 Authentication
@@ -16,43 +19,39 @@ User Registration (POST /users/register)
 
 User Login (POST /users/login)
 
-JWT Token-based Authentication
+JWT authentication
 
-Protected Routes (tasks accessible only to logged-in users)
+Password hashing using bcrypt
+
+Protected task routes
 
 Task Management
 
-Create Task (POST /tasks)
+Create Task
 
-Get All Tasks (GET /tasks)
+Get All Tasks
 
-Get Single Task (GET /tasks/:id)
+Get Single Task
 
-Update Task (PUT /tasks/:id)
+Update Task
 
-Delete Task (DELETE /tasks/:id)
+Delete Task
 
 Filtering
 
-Filter by status (Pending, In Progress, Done)
+Filter tasks by status: Pending, In Progress, Done
 
-Filter by priority (Low, Medium, High)
+Filter tasks by priority: Low, Medium, High
 
 Sorting
 
-Sort tasks by priority or createdAt
+Sort by createdAt or priority
 
 Pagination
 
-GET /tasks?page=1&limit=10
+/tasks?page=1&limit=10
 
-Security
-
-Password hashing (bcrypt)
-
-JWT protected routes
-
-🛠 Tech Stack
+Tech Stack
 
 Node.js
 
@@ -60,11 +59,11 @@ Express.js
 
 MongoDB (Mongoose)
 
-JWT Authentication
+JWT
 
 bcrypt
 
-express-validator / Joi
+express-validator
 
 Project Structure
 ├── controllers
@@ -83,33 +82,39 @@ Project Structure
 ├── server.js
 └── .env
 
-Environment Variables (.env)
+Environment Variables
+
+Create a .env file:
+
 PORT=5000
 MONGO_URI=your-mongodb-connection-string
 JWT_SECRET=your-secret-key
 
 Installation & Setup
-Clone the repository
+1. Clone the repository
 git clone https://github.com/IshaA1310/task-management-api.git
+cd task-management-api
 
-Install dependencies
+2. Install dependencies
 npm install
 
-Create .env file
-MONGO_URI=your-mongo-url
+3. Create .env file
+
+Add:
+
+MONGO_URI=your-mongo-db-url
 JWT_SECRET=your-secret
 PORT=5000
 
-Start the server
+4. Start the application
 npm start
 
 API Endpoints
-Auth Routes
+Authentication Routes
 Register
+
 POST /users/register
-
-
-Body:
+Request Body:
 
 {
   "name": "Isha",
@@ -118,33 +123,50 @@ Body:
 }
 
 Login
+
 POST /users/login
 
 Task Routes (Protected)
 
-Include header:
+Header required:
 
 Authorization: Bearer <token>
 
 Create Task
+
 POST /tasks
 
 Get All Tasks
+
 GET /tasks?page=1&limit=10&status=Pending&priority=High&sort=createdAt
 
 Get Single Task
+
 GET /tasks/:id
 
 Update Task
+
 PUT /tasks/:id
 
 Delete Task
+
 DELETE /tasks/:id
 
-Deployment (Render Cloud)
+Deployment on Render
 
-Connected GitHub repo to Render
+GitHub repository connected to Render
 
-Added environment variables under “Environment”
+Environment variables added
 
-Enabled auto deploy from main branch
+Auto-deploy enabled on main branch
+
+Build command: npm install
+
+Start command: node server.js
+
+Author
+
+Isha Aggarwal
+Backend / Full Stack Developer
+GitHub: https://github.com/IshaA1310
+LinkedIn: https://www.linkedin.com/in/isha-a-20a9122a
